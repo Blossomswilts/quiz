@@ -3,16 +3,15 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    color: aliceblue;
 }
 
 body {
     height: 100%;
-    background-color: #005614;
+    background-color: #444E47;
 }
 
 /* Start up screen and ending screen display */
-.begin-screen, .hide-score {
+.begin-screen, .score-box {
     position: absolute;
     top: 0%;
     height: 100%;
@@ -23,8 +22,26 @@ body {
     flex-direction: column;
 }
 
+h1 {
+    padding: 30px;
+    font-size: 7em;
+}
+
+#high-scores {
+    color: white;
+}
+
+p {
+    color: whitesmoke
+}
+
+#begin {
+    margin-bottom: 30px;
+}
+
+
 button {
-    background-color: #005614;
+    background-color: white;
 }
 
 #begin, #restart {
@@ -33,13 +50,17 @@ button {
     padding: 5px;
 }
 
+button #begin {
+    
+}
+
 #restart {
     margin-top: 10px;
 }
 
  /* Centers the questionaire dissplay center to the screen */
-.display-box {
-    background-color: #560042;
+#display-box {
+    background-color: #FFFFFF;
     padding: 100px;
     width: 75%;
     margin: 0 auto;
@@ -64,13 +85,13 @@ button {
 }
 
 .incorrect {
-    background-color: #097623;
+    background-color: #444E47;
     color: red;
     border-color: red;
 }
 
 .correct {
-    background-color: #097623;
+    background-color: #444E47;
     color: green;
     border-color: green;
 }

@@ -2,13 +2,14 @@
 let beginScreen = document.querySelector(".begin-screen");
 let beginButton = document.getElementById("begin");
 let nextButton = document.getElementById("next-button");
-let restartButton = document.getElementById("restart");
-let displayBox = document.getElementById("display-box");
+let restartButton = document.getElementById("restart").style.visibility = "hidden";
+let displayBox = document.getElementById("display-box").style.visibility = "hidden";
 let quizBox = document.getElementById("main-box");
 let numberOfQuestions = document.querySelector(".num-of-questions");
 let timeLeft = document.querySelector(".time-remaining");
 let highScore = document.getElementById("high-score");
-let scoreContainer = document.querySelector("score-box")
+let scoreContainer = document.querySelector("score-box");
+let playerScore = document.getElementById("your-score").style.visibility = "hidden";
 
 //_________Global Vars__________________________________________
 let numQuestion;

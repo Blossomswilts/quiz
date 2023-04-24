@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: aliceblue;
+}
+
+body {
+    height: 100%;
+    background-color: #005614;
+}
+
+/* Start up screen and ending screen display */
+.begin-screen, .hide-score {
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button {
+    background-color: #005614;
+}
+
+#begin, #restart {
+    font-size: 24px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#restart {
+    margin-top: 10px;
+}
+
+ /* Centers the questionaire dissplay center to the screen */
+.display-box {
+    background-color: #560042;
+    padding: 100px;
+    width: 75%;
+    margin: 0 auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+} 
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+/* Setting style for Java */
+
+.hide {
+    display: none;
+}
+
+.incorrect {
+    background-color: #097623;
+    color: red;
+    border-color: red;
+}
+
+.correct {
+    background-color: #097623;
+    color: green;
+    border-color: green;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/style.css">
+    <title>Quiz</title>
+</head>
+<body>
+    <!-- This sets the beginning screen for the quiz -->
+    <section class="begin-screen">
+        <button id="begin">Begin</button> 
+    </section>
+
+    <!-- sets the main heading for timer and position in quiz -->
+    <section class="display-box">
+        <section class="time-display">
+            <div class="number-of-count">
+                <div class="num-of-questions">
+                    1 out of 8 questions
+                </div>
+            </div>
+            <div class="timer-box">
+                <span>Time Remaining: </span>
+                <span class="time-remaining">60s</span>
+            </div>
+        </section>
+
+     <!-- This is where questions and the options for the questions will be displayed -->
+        <section class="main-box">
+
+        </section>
+    <!-- Next btn for questions -->
+        <button id="next-button">Next</button>
+    </section>
+    <!-- High scores will Show here from local storage top 5-->
+    <section class="hide-score">
+        <div id="high-scores">High Scores:</div>
+        <p class="score-1">1. </p>
+        <p class="score-2">2. </p>
+        <p class="score-3">3. </p>
+        <p class="score-4">4. </p>
+        <p class="score-5">5. </p>
+        <button id="restart">Restart</button>
+    </section>
+
+
+
+
+
+    <script src="./Assets/script.js"></script> 
+</body>
+</html>

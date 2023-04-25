@@ -84,14 +84,14 @@ button #begin {
     display: none;
 }
 
-.incorrect {
-    background-color: #444E47;
+.incorrect button {
+    background-color: #6b4f4f;
     color: red;
     border-color: red;
 }
 
-.correct {
-    background-color: #444E47;
+.correct button {
+    background-color: #577360;
     color: green;
     border-color: green;
 }

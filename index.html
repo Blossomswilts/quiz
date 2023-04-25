@@ -21,7 +21,7 @@
     </section>
 
     <!-- sets the main heading for timer and position in quiz -->
-    <section id="display-box">
+    <section id="display-box" class="hide">
         <section class="time-display">
             <div class="number-of-count">
                 <div class="num-of-questions">
@@ -36,13 +36,21 @@
 
      <!-- This is where questions and the options for the questions will be displayed -->
         <section id="main-box">
-
+            <div id="question-container">
+                <span id="question"></span>
+            </div>
+                <ul id="answer">
+                    <li><button class="answer-btn"></button></li>
+                    <li><button class="answer-btn"></button></li>
+                    <li><button class="answer-btn"></button></li>
+                    <li><button class="answer-btn"></button></li>
+                </ul> 
         </section>
-    <!-- Next btn for questions -->
-        <button id="next-button">Next</button>
+    <!-- Next btn for questions
+        <button id="next-button">Next</button> NEXT BUTTON NOT NECESSARY-->
     </section>
     <!-- High scores will Show here from local storage top 5-->
-    <section class="score-box">
+    <section class="score-box hide">
         <p id="your-score">Your Score</p>
         <button id="restart">Restart</button>
     </section>

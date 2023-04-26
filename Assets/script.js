@@ -125,7 +125,7 @@ function updateTimer() {
     timeLeft--;
     timeRemaining.textContent = `${timeLeft}s remaining.`;
     if (timeLeft <= 0) {
-        clearInterval(timeLeft);
+        clearInterval(updateTimer);
         showScore();
     }
 }
@@ -167,16 +167,35 @@ if (numQuestion < questionArray.length) {
 }
 
 function showScore() {
+    displayBox.classList.add("hide");
+    scoreContainer.classList.remove("hide");
     //create a pop up alert to enter initials
     //show score by showing box and hiding quiz box
-
+    playerScore.textContent = `Your score: ${timeLeft}`
     //ask for input
+    let namePerson = prompt("Please enter your name: ")
     //ready arr from local (parsed)
     //if return == null - initalize new array
     //New object contain init + score
     //push ^ new object to new array or already parsed array
     //stringify array + Save to local storage
     //Iterate ver array and display highest scores 1-5;
+    //_________________This function saves the input data and final score to local storage._________
+    function saveScore() {
+        let playerHighScore = {
+            Name: namePerson.value, 
+            Score: playerScore.value
+        };
+        localStorage.setItem("playerHighScore", JSON.stringify(playerHighScore));
+    }
+    //_________________This will call out the local storage_______________
+    function callScore() {
+        let lastScore = JSON.parse(localStorage.getItem("playerHighscore"));
+
+        if (lastScore !== null) {
+            //somehow create a for loop to push the highest scores to top 5 positions.
+        }
+    }
 
     //restart brings back to beginScreen
 }

@@ -116,8 +116,7 @@ function startQuiz() {
 
 //_________Trigger Restart Button_______________________________
 restartButton.addEventListener("click", () => {
-    startUp();
-    displayBox.classList.remove("hide");
+    beginScreen.classList.remove("hide");
     scoreContainer.classList.add("hide");
 });
 

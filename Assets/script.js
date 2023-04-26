@@ -17,7 +17,7 @@ const answerBtn = document.getElementsByClassName('answer-btn');
 //_________Global Vars__________________________________________
 let numQuestion = 0;
 let scoreCount = 0;
-let timeLeft = 5;
+let timeLeft = 60;
 let countdown;
 
 //_________Quiz Array___________________________________________
@@ -151,8 +151,6 @@ function selectedAnswer(e) {
     let currentQuestion = questionArray[numQuestion];
     //Set the value of true and false. 
     if (selectAnswer !== currentQuestion.options[currentQuestion.correct]) {
-        // selectedAnswer.classList.add("correct");
-        // selectedAnswer.classList.add("incorrect");
         timeLeft-5;
     }
     //To move the index up  one after every answer. 
@@ -163,13 +161,15 @@ function selectedAnswer(e) {
 if (numQuestion < questionArray.length) {
     showQuestions();
     } else {
+        displayBox.classList.add("hide");
+        scoreContainer.classList.remove("hide");
         showScore();
     }
 }
 
 function showScore() {
     //create a pop up alert to enter initials
-    //show score
+    //show score by showing box and hiding quiz box
 
     //ask for input
     //ready arr from local (parsed)

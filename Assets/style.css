@@ -118,3 +118,9 @@ ul #answer {
      font-weight: 700;
      padding-bottom: 2em;
 }
+
+
+#your-score {
+    font-size: 2.5em;
+    padding-bottom: 20px;
+}

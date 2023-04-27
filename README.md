@@ -16,12 +16,14 @@
 * Storing the correct index for the questions and answers. 
 * Updating score based on time. 
 * Applying functions that will set to the next function when conditions are met. 
+* Ensuring the time properly resets after the restart action is clicked. 
+* Pulling the data just outside the loop to iterate which index + 1 you are on with text.
 
 
 ## Resources:
 
 * Ladislav Jarabek : Coding Bootcamp Instructor
-*  : Coding Bootcmap Tutor
+* Corey Yates : Coding Bootcmap Tutor
 
 Link to deployed Website: 
 

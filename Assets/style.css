@@ -95,3 +95,26 @@ button #begin {
     color: green;
     border-color: green;
 }
+
+ul #answer {
+    max-width: 100%;
+}
+
+#answer .answer-btn {
+    width: 100%;
+    height: 4em;
+    background-color: #444E47;
+    color: #FFFFFF;
+    font-size: 1.3em;
+}
+
+#question-container {
+    display: flex;
+    justify-content: center;
+}
+
+#question {
+     font-size: 2em;
+     font-weight: 700;
+     padding-bottom: 2em;
+}

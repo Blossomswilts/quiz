@@ -17,7 +17,7 @@ const answerBtn = document.getElementsByClassName('answer-btn');
 //_________Global Vars__________________________________________
 let numQuestion = 0;
 let scoreCount = 0;
-let timeLeft = 60;
+let timeLeft = 80;
 let countdown;
 
 //_________Quiz Array___________________________________________
@@ -105,6 +105,20 @@ const questionArray = [
     },    
 ]
 
+    //_________________This will call out the local storage_______________
+    //Set to first as high scores is located on initial screen
+    function callScore() {
+        let lastScore = JSON.parse(localStorage.getItem("playerHighscore"));
+
+        if (lastScore !== null) {
+            //somehow create a for loop to push the highest scores to top 5 positions.
+            highScore.sort( (a,b) => {
+                return b.score - a.score;
+            })
+            highScore.splice(5);
+        }
+    }
+
 //_________Trigger Start Button_________________________________
 function startQuiz() {
     countdown = setInterval(updateTimer, 1000);
@@ -173,29 +187,20 @@ function showScore() {
     //show score by showing box and hiding quiz box
     playerScore.textContent = `Your score: ${timeLeft}`
     //ask for input
-    let namePerson = prompt("Please enter your name: ")
-    //ready arr from local (parsed)
-    //if return == null - initalize new array
-    //New object contain init + score
-    //push ^ new object to new array or already parsed array
-    //stringify array + Save to local storage
-    //Iterate ver array and display highest scores 1-5;
+    const namePerson = prompt("Please enter your name: ");
+
     //_________________This function saves the input data and final score to local storage._________
     function saveScore() {
         let playerHighScore = {
-            Name: namePerson.value, 
-            Score: playerScore.value
+            Name: namePerson, 
+            Score: playerScore.value,
         };
+
+        lastScore.push(playerHighScore);
         localStorage.setItem("playerHighScore", JSON.stringify(playerHighScore));
     }
-    //_________________This will call out the local storage_______________
-    function callScore() {
-        let lastScore = JSON.parse(localStorage.getItem("playerHighscore"));
 
-        if (lastScore !== null) {
-            //somehow create a for loop to push the highest scores to top 5 positions.
-        }
-    }
+
 
     //restart brings back to beginScreen
 }

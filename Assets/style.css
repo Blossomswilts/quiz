@@ -141,6 +141,7 @@ ul #answer {
  .scores li {
     color: white;
     font-size: 3em;
+    margin-left: 1em;
 }
 
 #score-form {

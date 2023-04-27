@@ -1,7 +1,7 @@
 //________Query Selectors pull data from HTML___________________
 const beginScreen = document.querySelector(".begin-screen");
 const beginButton = document.getElementById("begin");
-const restartButton = document.getElementById("restart");
+// const restartButton = document.getElementById("restart");
 const displayBox = document.getElementById("display-box");
 const quizBox = document.getElementById("main-box");
 const quizContent = document.getElementById("question-container");
@@ -123,12 +123,12 @@ function startQuiz() {
 
 
 //_________Trigger Restart Button_______________________________
-restartButton.addEventListener("click", () => {
-    beginScreen.classList.remove("hide");
-    scoreContainer.classList.add("hide");
-    clearInterval(countdown);
-    timeLeft = 80;
-});
+// restartButton.addEventListener("click", () => {
+//     beginScreen.classList.remove("hide");
+//     scoreContainer.classList.add("hide");
+//     clearInterval(countdown);
+//     timeLeft = 80;
+// });
 
 //_________Timer Countdown from 60s_____________________________
 function updateTimer() {

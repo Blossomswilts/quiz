@@ -124,3 +124,48 @@ ul #answer {
     font-size: 2.5em;
     padding-bottom: 20px;
 }
+
+.high-box {
+    height: 80em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#high-scores {
+    font-size: 5em;
+    padding-bottom: 30px;
+}
+
+ .scores li {
+    color: white;
+    font-size: 3em;
+}
+
+#score-form {
+ display: flex;
+ flex-direction: column;
+}
+
+#name {
+    font-size: 3em;
+    text-align: center;
+}
+
+label {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+
+#saveHighScore {
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+
+#your-score {
+    text-align: center;
+    padding: 20px;
+}

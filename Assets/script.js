@@ -20,6 +20,11 @@ let scoreCount = 0;
 let timeLeft = 80;
 let countdown;
 
+
+
+let scoreArray = JSON.parse(localStorage.getItem("playerHighScore")) || [];
+console.log(scoreArray);
+
 //_________Quiz Array___________________________________________
 
 const questionArray = [
@@ -102,25 +107,14 @@ const questionArray = [
             "join()",
         ],
         correct: 0,
-    },    
+    },
 ]
 
-    //_________________This will call out the local storage_______________
-    //Set to first as high scores is located on initial screen
-    function callScore() {
-        let lastScore = JSON.parse(localStorage.getItem("playerHighscore"));
-
-        if (lastScore !== null) {
-            //somehow create a for loop to push the highest scores to top 5 positions.
-            highScore.sort( (a,b) => {
-                return b.score - a.score;
-            })
-            highScore.splice(5);
-        }
-    }
 
 //_________Trigger Start Button_________________________________
 function startQuiz() {
+    numQuestion = 0;
+    scoreCount = 0;
     countdown = setInterval(updateTimer, 1000);
     beginScreen.classList.add("hide");
     displayBox.classList.remove("hide");
@@ -132,6 +126,8 @@ function startQuiz() {
 restartButton.addEventListener("click", () => {
     beginScreen.classList.remove("hide");
     scoreContainer.classList.add("hide");
+    clearInterval(countdown);
+    timeLeft = 80;
 });
 
 //_________Timer Countdown from 60s_____________________________
@@ -139,7 +135,7 @@ function updateTimer() {
     timeLeft--;
     timeRemaining.textContent = `${timeLeft}s remaining.`;
     if (timeLeft <= 0) {
-        clearInterval(updateTimer);
+        clearInterval(countdown);
         showScore();
     }
 }
@@ -148,6 +144,7 @@ function updateTimer() {
 //_________Display Quiz Contaier________________________________
 function showQuestions() {
         //places current question index to = 0 and loops to go through array of questions
+        
     let currentQuestion = questionArray[numQuestion];
     questionPlace.innerHTML = currentQuestion.question;
         //Sets the buttons to show on current index, depending on array, and add event of click to button. (checks new function: answerSelected)
@@ -155,18 +152,22 @@ function showQuestions() {
         answerBtn[i].innerHTML = currentQuestion.options[i];
         answerBtn[i].addEventListener("click", selectedAnswer);
     }
+    numberOfQuestions.textContent = `${numQuestion + 1} out of 8 questions.`;
 }
+
 
 //_________Check True or False__________________________________
 function selectedAnswer(e) {
     //To target parent element, which would be the question array list from showQuestions().
     let selectAnswer = e.target.textContent;
     let currentQuestion = questionArray[numQuestion];
-    //Set the value of true and false. 
+    //Set the value of true and false.
     if (selectAnswer !== currentQuestion.options[currentQuestion.correct]) {
-        timeLeft-5;
+        timeLeft-=5;
+    } else {
+        scoreCount++;
     }
-    //To move the index up  one after every answer. 
+    //To move the index up  one after every answer.
     numQuestion++;
 
 //_________Check if array still has questions and if not end quiz_
@@ -183,22 +184,21 @@ if (numQuestion < questionArray.length) {
 function showScore() {
     displayBox.classList.add("hide");
     scoreContainer.classList.remove("hide");
-    //create a pop up alert to enter initials
     //show score by showing box and hiding quiz box
-    playerScore.textContent = `Your score: ${timeLeft}`
-    //ask for input
-    const namePerson = prompt("Please enter your name: ");
+    let totalScore = timeLeft * scoreCount;
+    playerScore.textContent = `Your score: ${totalScore}`
 
+    document.getElementById("score-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        let namePerson = document.getElementById("name").value;
+        let playerScore = {totalScore, namePerson};
+        console.log(namePerson);
+        scoreArray.push(playerScore);
+        localStorage.setItem("playerHighScore", JSON.stringify(scoreArray));
+        //this will bring you to the html page created for high scores.
+        window.location.href = "/highscores.html";
+     })
     //_________________This function saves the input data and final score to local storage._________
-    function saveScore() {
-        let playerHighScore = {
-            Name: namePerson, 
-            Score: playerScore.value,
-        };
-
-        lastScore.push(playerHighScore);
-        localStorage.setItem("playerHighScore", JSON.stringify(playerHighScore));
-    }
 
 
 

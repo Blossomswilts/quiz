@@ -12,13 +12,19 @@
     <section class="begin-screen">
         <h1>Lets get your quiz on!</h1>
         <button id="begin">Begin</button> 
-        <section id="high-scores">High Scores:</section>
-        <p class="score-1">1. </p>
+
+        <!-- <section id="high-scores"></section> -->
+        <ol class="scores">
+                <!-- Append here -->
+        </ol>
+        <!-- <section id="high-scores">High Scores:</section> -->
+        <!-- <p class="score-1">1. </p>
         <p class="score-2">2. </p>
         <p class="score-3">3. </p>
         <p class="score-4">4. </p>
-        <p class="score-5">5. </p>
+        <p class="score-5">5. </p> -->
     </section>
+    
 
     <!-- sets the main heading for timer and position in quiz -->
     <section id="display-box" class="hide">
@@ -30,7 +36,7 @@
             </div>
             <div class="timer-box">
                 <span>Time Remaining: </span>
-                <span class="time-remaining">60s</span>
+                <span class="time-remaining">80s</span>
             </div>
         </section>
 
@@ -51,7 +57,14 @@
     </section>
     <!-- High scores will Show here from local storage top 5-->
     <section class="score-box hide">
-        <p id="your-score">Your Score</p>
+
+        <form id="score-form">
+            <label for="name">Name</label>
+                <input type="text" id="name">
+            <p id="your-score">Your Score, <span id="scores"></span></p>
+            <button type="submit" id="saveHighScore">Save High Score</button>
+        </form>
+
         <button id="restart">Restart</button>
     </section>
 

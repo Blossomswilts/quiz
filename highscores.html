@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/style.css">
+    <title>Quiz</title>
+</head>
+<body>
+    <!-- This sets the beginning screen for the quiz -->
+   <section class="high-box">
+       
+            <section id="high-scores">High Scores:</section>
+            <ol class="scores">
+                    <!-- Append here -->
+            </ol>
+            <!-- <button id="restart">Restart</button> -->
+       
+   </section>
+    <!-- High scores will Show here from local storage top 5-->
+
+
+
+
+
+
+    <!-- <script src="./Assets/script.js"></script>  -->
+    <script>let highScoreArray = JSON.parse(localStorage.getItem("playerHighScore"));
+    console.log(highScoreArray);
+        //push high scores
+    highScoreArray.sort((a,b) => {
+        return b.totalScore - a.totalScore; //something not working.
+        });
+        highScoreArray.splice(5);
+        console.log(highScoreArray);
+        document.querySelector(".scores").innerHTML = "";
+        //for each to push li
+        highScoreArray.forEach(({totalScore, namePerson}) => {
+            let li = document.createElement("li");
+            li.textContent = namePerson + " " + totalScore;
+            document.querySelector(".scores").appendChild(li);
+
+        });
+
+        
+
+    </script>
+</body>
+</html>

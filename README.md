@@ -25,7 +25,7 @@
 * Ladislav Jarabek : Coding Bootcamp Instructor
 * Corey Yates : Coding Bootcmap Tutor
 
-Link to deployed Website: https://blossomswilts.github.io/highscores.html
+Link to deployed Website: https://blossomswilts.github.io/quiz/
 
 mit
 

@@ -196,7 +196,7 @@ function showScore() {
         scoreArray.push(playerScore);
         localStorage.setItem("playerHighScore", JSON.stringify(scoreArray));
         //this will bring you to the html page created for high scores.
-        window.location.href = "/highscores.html";
+        window.location.href = "highscores.html";
      })
     //_________________This function saves the input data and final score to local storage._________
 

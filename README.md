@@ -20,6 +20,15 @@
 * Pulling the data just outside the loop to iterate which index + 1 you are on with text.
 
 
+##Screenshot(s) of application
+
+https://user-images.githubusercontent.com/117021869/235373721-b2686f84-57de-4d76-a07c-38e06fdffd37.jpg
+
+https://user-images.githubusercontent.com/117021869/235373722-f5a59aab-b82a-46d4-9651-d601d26b1991.jpg
+
+https://user-images.githubusercontent.com/117021869/235373719-8eb2c70f-7b76-4061-9363-f57121cf93b0.jpg
+
+
 ## Resources:
 
 * Ladislav Jarabek : Coding Bootcamp Instructor
